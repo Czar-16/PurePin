@@ -9,8 +9,8 @@ import HowItWorks from "@/components/Home/HowItWorks";
 export default function Home() {
   return (
     <>
+      // TODO: redesign the logo and the navbar.
       <Navbar />
-
       <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6">
         <Hero />
 
@@ -22,7 +22,6 @@ export default function Home() {
 
         <HowItWorks />
       </main>
-
       <Footer />
     </>
   );
