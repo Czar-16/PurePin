@@ -22,18 +22,14 @@ export default function ImageCard({ image }: ImageCardProps) {
       });
 
       const blob = response.data;
-
       const objectUrl = window.URL.createObjectURL(blob);
-
       const link = document.createElement("a");
 
       link.href = objectUrl;
       link.download = `purepin.${image.format}`;
 
       document.body.appendChild(link);
-
       link.click();
-
       link.remove();
 
       window.URL.revokeObjectURL(objectUrl);
@@ -44,12 +40,14 @@ export default function ImageCard({ image }: ImageCardProps) {
 
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-600/60 hover:shadow-lg hover:shadow-red-950/40">
-      <div className="relative aspect-square">
+      <div className="relative flex max-h-[70vh] w-full items-center justify-center bg-black/20">
         <Image
           src={image.url}
           alt={`Pinterest Original ${image.format.toUpperCase()}`}
-          fill
-          className="object-cover"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="h-auto max-h-[70vh] w-full object-contain"
           unoptimized
         />
       </div>

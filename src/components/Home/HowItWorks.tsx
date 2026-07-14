@@ -1,17 +1,26 @@
-import { Copy, Link2, Download } from "lucide-react";
+import {
+  MousePointerClick,
+  Copy,
+  ClipboardPaste,
+  Download,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const steps = [
   {
-    icon: Copy,
-    title: "Copy Pinterest Link",
-    description: "Copy the Pinterest image URL you want to download.",
+    icon: MousePointerClick,
+    title: "Right-Click the Image",
+    description: "Open the Pinterest image and right-click on it.",
   },
   {
-    icon: Link2,
+    icon: Copy,
+    title: "Copy Image Address",
+    description: 'Select "Copy image address" from the menu.',
+  },
+  {
+    icon: ClipboardPaste,
     title: "Paste Into PurePin",
-    description:
-      "Paste the link into the input field and generate original images.",
+    description: "Paste the link into the input field and generate.",
   },
   {
     icon: Download,
@@ -33,7 +42,7 @@ export default function HowItWorks() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
         {steps.map((step, index) => {
           const Icon = step.icon;
 

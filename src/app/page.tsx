@@ -15,28 +15,41 @@ import { Separator } from "@/components/ui/separator";
 
 import { GeneratedImage } from "@/types";
 import { pinterestUrlSchema } from "@/lib/validation";
-import { generateOriginalUrls } from "@/lib/pinterest";
+import axios from "axios";
 
 export default function Home() {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [images, setImages] = useState<GeneratedImage[]>([]);
   const [error, setError] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleGenerate = async () => {
+    setLoading(true);
     setError("");
+    setHasSearched(true);
 
     const result = pinterestUrlSchema.safeParse(url);
 
     if (!result.success) {
       setImages([]);
       setError(result.error.issues[0].message);
+      setLoading(false);
       return;
     }
 
-    const generatedImages = generateOriginalUrls(result.data);
+    try {
+      const response = await axios.post("/api/resolve", {
+        url: result.data,
+      });
 
-    setImages(generatedImages);
+      setImages(response.data);
+    } catch {
+      setImages([]);
+      setError("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -59,8 +72,12 @@ export default function Home() {
 
         <Features />
 
-        <ResultGrid images={images} />
-
+        {/* <ResultGrid images={images} hasSearched={hasSearched} /> */}
+        <ResultGrid
+          images={images}
+          hasSearched={hasSearched}
+          loading={loading}
+        />
         <Separator className="my-20 bg-red-950/60" />
 
         <HowItWorks />
