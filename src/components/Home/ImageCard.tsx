@@ -54,14 +54,15 @@ export default function ImageCard({ image }: ImageCardProps) {
 
       <div className="space-y-4 p-5">
         <h3 className="text-lg font-semibold text-white">
-          {image.format.toUpperCase()}
+          {/* {image.format.toUpperCase()} */}
+          {image.format.toUpperCase()} - Max Resolution Available.
         </h3>
 
         <Button
           onClick={handleDownload}
-          className="w-full bg-red-600 text-white hover:bg-red-700"
+          className="w-full bg-red-600 text-white hover:bg-red-700 cursor-pointer"
         >
-          <Download className="mr-2 h-4 w-4" />
+          <Download className="mr-2 h-4 w-4 " />
           Download Original
         </Button>
       </div>

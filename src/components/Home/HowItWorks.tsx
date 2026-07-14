@@ -31,7 +31,10 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="mx-auto mt-28 mb-24 w-full max-w-6xl px-4">
+    <section
+      id="how-it-works"
+      className="mx-auto mt-28 mb-24 w-full max-w-6xl px-4 scroll-mt-24"
+    >
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-white sm:text-4xl">
           How it works

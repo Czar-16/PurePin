@@ -16,6 +16,10 @@ import { Separator } from "@/components/ui/separator";
 import { GeneratedImage } from "@/types";
 import { pinterestUrlSchema } from "@/lib/validation";
 import axios from "axios";
+import AboutSection from "@/components/Home/AboutSection";
+import DeviceGuide from "@/components/Home/DeviceGuide";
+import FAQ from "@/components/Home/FAQ";
+import DemoVideo from "@/components/Home/DemoVideo";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -70,17 +74,35 @@ export default function Home() {
           <p className="mt-4 text-center text-sm text-red-500">{error}</p>
         )}
 
-        <Features />
-
         {/* <ResultGrid images={images} hasSearched={hasSearched} /> */}
         <ResultGrid
           images={images}
           hasSearched={hasSearched}
           loading={loading}
         />
-        <Separator className="my-20 bg-red-950/60" />
+        <Separator className="my-15 bg-red-950/60" />
+
+        <Features />
+
+        <Separator className="my-15 bg-red-950/60" />
 
         <HowItWorks />
+
+        <Separator className="my-15 bg-red-950/60" />
+
+        <DemoVideo />
+        <Separator className="my-15 bg-red-950/60" />
+
+        <AboutSection />
+
+        <Separator className="my-15 bg-red-950/60" />
+
+        <DeviceGuide />
+
+        <Separator className="my-15 bg-red-950/60" />
+
+        <FAQ />
+        <Separator className="my-15 bg-red-950/60" />
       </main>
 
       <Footer />

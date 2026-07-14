@@ -19,7 +19,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 relative border-b border-red-950/40 bg-[#0d0a0a]/80 backdrop-blur-md">
       <div className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-red-600/50 to-transparent" />
 
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/Plogo2.png"
@@ -41,9 +41,10 @@ export default function Navbar() {
           className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-zinc-400 transition-colors hover:border-red-600/50 hover:text-white"
         >
           <GithubIcon className="h-4 w-4" />
-          <span className="hidden sm:inline">Star on GitHub</span>
+          <span className="hidden sm:inline">Behind the Scenes</span>
         </Link>
       </div>
     </header>
   );
 }
+// hover:border-red-600/50
