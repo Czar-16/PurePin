@@ -1,32 +1,29 @@
 "use client";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Clipboard, Loader2 } from "lucide-react";
 
-export default function UrlInput() {
-  const [url, setUrl] = useState("");
-  const [loading, setLoading] = useState(false);
+interface UrlInputProps {
+  url: string;
+  setUrl: React.Dispatch<React.SetStateAction<string>>;
+  onGenerate: () => void;
+  loading: boolean;
+}
 
-  const handlePaste = async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      setUrl(text);
-    } catch (err) {
-      console.error("Clipboard read failed:", err);
-    }
-  };
-
-  const handleGenerate = async () => {
-    if (!url.trim()) return;
-    setLoading(true);
-    try {
-      // TODO: replace with your actual API call
-      console.log("Generating for:", url);
-    } finally {
-      setLoading(false);
-    }
-  };
+export default function UrlInput({
+  url,
+  setUrl,
+  onGenerate,
+  loading,
+}: UrlInputProps) {
+  // const handlePaste = async () => {
+  //   try {
+  //     const text = await navigator.clipboard.readText();
+  //     setUrl(text);
+  //   } catch (err) {
+  //     console.error("Clipboard read failed:", err);
+  //   }
+  // };
 
   return (
     <section className="mx-auto w-full max-w-3xl px-4">
@@ -42,7 +39,7 @@ export default function UrlInput() {
             />
             <button
               type="button"
-              onClick={handlePaste}
+              // onClick={handlePaste}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition hover:text-red-500"
             >
               <Clipboard size={20} />
@@ -50,13 +47,13 @@ export default function UrlInput() {
           </div>
           {/* Generate Button */}
           <Button
-            onClick={handleGenerate}
+            onClick={onGenerate}
             disabled={loading || !url.trim()}
             className="h-11 w-full rounded-xl bg-red-600 px-6 text-sm font-medium text-white shadow-sm transition hover:bg-red-700 disabled:opacity-50 sm:h-12 sm:w-auto sm:px-8 sm:text-base cursor-pointer"
           >
             {loading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin " />
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Generating...
               </>
             ) : (
