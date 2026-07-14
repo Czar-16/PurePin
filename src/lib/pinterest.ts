@@ -1,23 +1,25 @@
-// import { GeneratedImage } from "@/types";
+// src/lib/pinterest.ts
 
-import { GeneratedImageUrl } from "@/types";
+import { GeneratedImage } from "@/types";
 
-export function generateOriginalUrls(url: string): GeneratedImageUrl[] {
-  // By default the url is in jpg just the originals is replace with px.
-  const original = url.includes("/originals/")
-    ? url
-    : url.replace(/\/(236x|474x|564x|736x)\//, "/originals/");
+export function generateOriginalUrls(url: string): GeneratedImage[] {
+  // Replace any Pinterest size folder with "originals"
+  const baseUrl = url.replace(
+    /https:\/\/i\.pinimg\.com\/[^/]+\//,
+    "https://i.pinimg.com/originals/",
+  );
 
-  const png = original.replace(/\.(jpg|jpeg|webp)$/i, ".png");
+  // Remove the existing extension
+  const withoutExtension = baseUrl.replace(/\.(jpg|jpeg|png|webp)$/i, "");
 
   return [
     {
-      type: "jpg",
-      url: original,
+      format: "jpg",
+      url: `${withoutExtension}.jpg`,
     },
     {
-      type: "png",
-      url: png,
+      format: "png",
+      url: `${withoutExtension}.png`,
     },
   ];
 }

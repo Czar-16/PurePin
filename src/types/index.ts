@@ -1,8 +1,6 @@
-export interface GeneratedImageUrl {
-  type: "jpg" | "png";
-  url: string;
-}
+// src/types/index.ts
 
-export interface GenerateResult {
-  images: GeneratedImageUrl[];
+export interface GeneratedImage {
+  url: string;
+  format: "jpg" | "png";
 }
