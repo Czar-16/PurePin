@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "How to download Pinterest images in high resolution?",
     answer:
-      'Just copy the Pinterest image URL (right-click the image and select "Copy image address"), paste it into the input field above, and click "Generate HQ Images." PurePin fetches the original, uncompressed version and gives you a direct download link — no extra steps needed.',
+      'Just right-click the image and select "Copy image address", paste it into the input field above, and click "Generate HQ Images." PurePin fetches the original, uncompressed version and gives you a direct download button — no extra steps needed.',
   },
   {
     question: "What image formats are supported?",
@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "Can I download images on my mobile device?",
     answer:
-      "Yes. PurePin works entirely in your browser, so it works the same on mobile, tablet, or desktop. Just copy the image link from the Pinterest app or mobile site and paste it in.",
+      "Yes. PurePin works entirely in your browser, so it works the same on mobile, tablet, or desktop. Open Pinterest.com in Chrom or any other browser of your choice, switch to desktop mode, right-click the image, copy the image address, and paste it here.",
   },
   {
     question: "Do I need a Pinterest account to download images?",

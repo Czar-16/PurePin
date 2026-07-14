@@ -32,7 +32,9 @@ export default function DemoVideo() {
             <div className="aspect-video">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/YOUR_DESKTOP_VIDEO_ID"
+                // put video ID
+                // https://www.youtube.com/embed/VIDEO_ID
+                // src="https://www.youtube.com/embed/CHj7FSfjJjc"
                 title="PurePin Desktop Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -47,13 +49,13 @@ export default function DemoVideo() {
             On Mobile
           </h3>
 
-          <div className="mx-auto w-full max-w-[240px] rounded-[2rem] border-4 border-white/10 bg-black p-2 shadow-lg shadow-red-950/40 sm:max-w-[260px]">
-            <div className="aspect-[9/16] max-h-[480px] overflow-hidden rounded-[1.5rem]">
+          <div className="mx-auto w-full max-w-[300px] rounded-[2rem] border-4 border-white/10 bg-black p-2 shadow-lg shadow-red-950/40 sm:max-w-[320px]">
+            <div className="aspect-[9/16] max-h-[560px] overflow-hidden rounded-[1.5rem]">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/YOUR_MOBILE_VIDEO_ID"
+                // src="https://www.youtube.com/embed/CHj7FSfjJjc"
                 title="PurePin Mobile Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
                 allowFullScreen
               />
             </div>
