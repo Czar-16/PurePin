@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "Can I download images on my mobile device?",
     answer:
-      "Yes. PurePin works entirely in your browser, so it works the same on mobile, tablet, or desktop. Open Pinterest.com in Chrom or any other browser of your choice, switch to desktop mode, right-click the image, copy the image address, and paste it here.",
+      "Yes. PurePin works entirely in your browser, so it works the same on mobile, tablet, or desktop. Open Pinterest.com in Chrome or any other browser of your choice, switch to desktop mode, right-click the image, copy the image address, and paste it here.",
   },
   {
     question: "Do I need a Pinterest account to download images?",
@@ -50,12 +50,12 @@ export default function FAQ() {
         </p>
       </div>
 
-      <Accordion type="single" collapsible className="space-y-3 sm:space-y-4 ">
+      <Accordion multiple={false} className="space-y-3 sm:space-y-4">
         {faqs.map((faq, index) => (
           <AccordionItem
             key={faq.question}
             value={`item-${index}`}
-            className="rounded-xl border border-white/10 bg-white/5 px-4 backdrop-blur-sm transition-colors hover:border-red-600/40 data-[state=open]:border-red-600/50 sm:px-6 "
+            className="rounded-xl border border-white/10 bg-white/5 px-4 backdrop-blur-sm transition-colors hover:border-red-600/40 data-[state=open]:border-red-600/50 sm:px-6"
           >
             <AccordionTrigger className="py-4 text-left text-sm font-semibold text-white hover:no-underline sm:py-5 sm:text-base cursor-pointer">
               {faq.question}
