@@ -25,7 +25,7 @@ export default function DemoVideo() {
               <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
 
               <div className="ml-3 flex-1 truncate rounded-md bg-black/30 px-3 py-1 text-[10px] text-zinc-500 sm:text-xs">
-                purepin.app
+                purepin.vercel.app
               </div>
             </div>
 
@@ -53,7 +53,8 @@ export default function DemoVideo() {
             <div className="aspect-[9/16] max-h-[560px] overflow-hidden rounded-[1.5rem]">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/j6Vn0NGLl6M"
+                src="https://www.youtube.com/embed/P1VRMYw7m10"
+                // https://youtube.com/shorts/P1VRMYw7m10
                 title="PurePin Mobile Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
                 allowFullScreen

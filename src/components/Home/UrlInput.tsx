@@ -34,7 +34,7 @@ export default function UrlInput({
             <Input
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="Paste Pinterest image URL..."
+              placeholder="Paste Pinterest image address..."
               className="h-11 border-0 bg-transparent pr-12 text-sm text-white placeholder:text-gray-500 shadow-none focus-visible:ring-1 focus-visible:ring-red-400 sm:h-12 sm:text-base"
             />
             <button
