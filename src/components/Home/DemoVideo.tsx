@@ -34,7 +34,7 @@ export default function DemoVideo() {
                 className="h-full w-full"
                 // put video ID
                 // https://www.youtube.com/embed/VIDEO_ID
-                // src="https://www.youtube.com/embed/CHj7FSfjJjc"
+                src="https://www.youtube.com/embed/j6Vn0NGLl6M"
                 title="PurePin Desktop Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -53,7 +53,7 @@ export default function DemoVideo() {
             <div className="aspect-[9/16] max-h-[560px] overflow-hidden rounded-[1.5rem]">
               <iframe
                 className="h-full w-full"
-                // src="https://www.youtube.com/embed/CHj7FSfjJjc"
+                src="https://www.youtube.com/embed/j6Vn0NGLl6M"
                 title="PurePin Mobile Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
                 allowFullScreen
