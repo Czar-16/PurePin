@@ -16,7 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PurePin",
-  description: "Upgrade any Pinterest image to its highest quality instantly.",
+  description:
+    "Convert Pinterest image address into the highest quality version instantly. No ads, no login — just fast downloads.",
+  icons: {
+    icon: "/Plogo2.png",
+  },
 };
 
 export default function RootLayout({

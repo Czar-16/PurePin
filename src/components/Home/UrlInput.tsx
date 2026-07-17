@@ -16,14 +16,14 @@ export default function UrlInput({
   onGenerate,
   loading,
 }: UrlInputProps) {
-  // const handlePaste = async () => {
-  //   try {
-  //     const text = await navigator.clipboard.readText();
-  //     setUrl(text);
-  //   } catch (err) {
-  //     console.error("Clipboard read failed:", err);
-  //   }
-  // };
+  const handlePaste = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      setUrl(text);
+    } catch (err) {
+      console.error("Clipboard read failed:", err);
+    }
+  };
 
   return (
     <section className="mx-auto w-full max-w-3xl px-4">
@@ -39,7 +39,7 @@ export default function UrlInput({
             />
             <button
               type="button"
-              // onClick={handlePaste}
+              onClick={handlePaste}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition hover:text-red-500"
             >
               <Clipboard size={20} />

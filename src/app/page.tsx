@@ -74,7 +74,6 @@ export default function Home() {
           <p className="mt-4 text-center text-sm text-red-500">{error}</p>
         )}
 
-        {/* <ResultGrid images={images} hasSearched={hasSearched} /> */}
         <ResultGrid
           images={images}
           hasSearched={hasSearched}

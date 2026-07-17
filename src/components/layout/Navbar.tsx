@@ -47,4 +47,3 @@ export default function Navbar() {
     </header>
   );
 }
-// hover:border-red-600/50
