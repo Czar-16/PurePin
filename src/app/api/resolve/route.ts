@@ -5,11 +5,8 @@ import { generateOriginalUrls } from "@/lib/pinterest";
 
 async function imageExists(url: string) {
   try {
-    const response = await axios.get(url, {
-      responseType: "arraybuffer",
-      validateStatus: () => true,
-    });
-
+    // it fetcches only header not the whole body
+    const response = await axios.head(url, { validateStatus: () => true });
     return response.status === 200;
   } catch {
     return false;

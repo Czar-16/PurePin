@@ -1,5 +1,3 @@
-// src/components/Home/DeviceGuide.tsx
-
 interface DeviceSection {
   title: string;
   steps: string[];

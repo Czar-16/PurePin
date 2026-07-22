@@ -20,7 +20,7 @@ export default function ResultGrid({
 
   // request is in-flight — don't show EmptyState yet
   if (loading) {
-    return null; // or a loading skeleton, see below
+    return null;
   }
 
   // search is done but the result is empty array

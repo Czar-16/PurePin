@@ -1,5 +1,3 @@
-// src/components/Home/AboutSection.tsx
-
 const sections = [
   {
     title: "About Pinterest Image Downloading",

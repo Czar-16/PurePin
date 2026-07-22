@@ -1,5 +1,3 @@
-// src/lib/pinterest.ts
-
 import { GeneratedImage } from "@/types";
 
 export function generateOriginalUrls(url: string): GeneratedImage[] {

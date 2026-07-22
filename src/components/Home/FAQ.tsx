@@ -1,5 +1,3 @@
-// src/components/Home/FAQ.tsx
-
 import {
   Accordion,
   AccordionContent,
