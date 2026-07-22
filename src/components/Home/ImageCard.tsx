@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import { Download } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { GeneratedImage } from "@/types";
@@ -12,29 +13,60 @@ interface ImageCardProps {
 }
 
 export default function ImageCard({ image }: ImageCardProps) {
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const getImageId = (url: string) => {
+    const parts = url.split("/");
+    const filename = parts[parts.length - 1]; // abcdef1234567890.jpg
+    return filename.split(".")[0]; // abcdef1234567890
+  };
+
   const handleDownload = async () => {
+    setIsDownloading(true);
+    setProgress(0);
+
     try {
       const response = await axios.get("/api/download", {
         params: {
           url: image.url,
         },
         responseType: "blob",
+        onDownloadProgress: (progressEvent) => {
+          if (progressEvent.total) {
+            const percent = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total,
+            );
+            setProgress(percent);
+          } else {
+            // total size unknown (no Content-Length header) — show indeterminate progress
+            setProgress((prev) => Math.min(prev + 10, 90));
+          }
+        },
       });
 
       const blob = response.data;
       const objectUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
 
+      const imageId = getImageId(image.url);
       link.href = objectUrl;
-      link.download = `purepin.${image.format}`;
+      link.download = `purepin-${imageId}.${image.format}`;
 
       document.body.appendChild(link);
       link.click();
       link.remove();
 
       window.URL.revokeObjectURL(objectUrl);
+      setProgress(100);
     } catch (error) {
       console.error("Download failed:", error);
+    } finally {
+      // brief delay so the user sees the 100% state before it resets
+      setTimeout(() => {
+        setIsDownloading(false);
+        setProgress(0);
+      }, 400);
     }
   };
 
@@ -54,17 +86,35 @@ export default function ImageCard({ image }: ImageCardProps) {
 
       <div className="space-y-4 p-5">
         <h3 className="text-lg font-semibold text-white">
-          {/* {image.format.toUpperCase()} */}
           {image.format.toUpperCase()} - Max Resolution Available.
         </h3>
 
         <Button
           onClick={handleDownload}
-          className="w-full bg-red-600 text-white hover:bg-red-700 cursor-pointer"
+          disabled={isDownloading}
+          className="w-full bg-red-600 text-white hover:bg-red-700 cursor-pointer disabled:cursor-not-allowed disabled:opacity-80"
         >
-          <Download className="mr-2 h-4 w-4 " />
-          Download Original
+          {isDownloading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Downloading... {progress}%
+            </>
+          ) : (
+            <>
+              <Download className="mr-2 h-4 w-4" />
+              Download Original
+            </>
+          )}
         </Button>
+
+        {isDownloading && (
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full bg-red-600 transition-all duration-200 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,11 +1,10 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import { string } from "zod";
 
 export async function GET(request: NextRequest) {
-  console.log("Download API hit");
+  // console.log("Download API hit");
   const url = request.nextUrl.searchParams.get("url");
-  console.log("URL is :", url);
+  // console.log("URL is :", url);
 
   if (!url) {
     return NextResponse.json(
@@ -25,7 +24,7 @@ export async function GET(request: NextRequest) {
     // this route being abused as an open proxy (SSRF risk)
     if (parsedUrl.hostname !== "i.pinimg.com") {
       return NextResponse.json(
-        { error: "Only Pinterest image URLs are allowed." },
+        { error: "Only Pinterest image addresses are allowed." },
         { status: 400 },
       );
     }
@@ -54,4 +53,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-//explain me the steps in short, what we are doing , why we are taking the data in raw binary and

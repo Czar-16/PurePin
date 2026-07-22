@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "Do I need a Pinterest account to download images?",
     answer:
-      "No account needed — neither for Pinterest nor for PurePin. You only need the public image URL, and our tool handles the rest.",
+      "No account needed — neither for Pinterest nor for PurePin. You only need the public image address, and our tool handles the rest.",
   },
 ];
 

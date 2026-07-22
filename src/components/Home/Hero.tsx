@@ -26,8 +26,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8 lg:text-lg">
-          Convert Pinterest image URLs into the highest quality version
-          instantly. No ads, no login &mdash; just fast downloads.
+          Convert Pinterest image into the highest quality version instantly. No
+          ads, no login &mdash; just fast downloads.
         </p>
       </div>
     </section>

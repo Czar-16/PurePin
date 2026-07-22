@@ -34,7 +34,7 @@ export default function DemoVideo() {
                 className="h-full w-full"
                 // put video ID
 
-                src="https://www.youtube.com/embed/j6Vn0NGLl6M"
+                src="https://www.youtube-nocookie.com/embed/j6Vn0NGLl6M?rel=0&modestbranding=1&iv_load_policy=3"
                 title="PurePin Desktop Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -53,7 +53,7 @@ export default function DemoVideo() {
             <div className="aspect-[9/16] max-h-[560px] overflow-hidden rounded-[1.5rem]">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/P1VRMYw7m10"
+                src="https://www.youtube-nocookie.com/embed/P1VRMYw7m10?rel=0&modestbranding=1&iv_load_policy=3"
                 title="PurePin Mobile Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
                 allowFullScreen
