@@ -4,9 +4,14 @@ PurePin is a simple, fast web app for downloading high-resolution images from Pi
 
 ## 📸 Screenshots
 
-|                Landing Page                 |                   Paste Image URL                   |                 Download Result                 |
-| :-----------------------------------------: | :-------------------------------------------------: | :---------------------------------------------: |
-| ![Home Page](./public/screenshots/home.png) | ![Download Page](./public/screenshots/download.png) | ![Result Page](./public/screenshots/result.png) |
+**Landing Page**
+![Landing Page](./public/screenshots/home.png)
+
+**Paste Image URL**
+![Paste Image URL](./public/screenshots/download.png)
+
+**Download Result**
+![Download Result](./public/screenshots/result.png)
 
 ## ✨ Features
 
@@ -31,6 +36,7 @@ PurePin is a simple, fast web app for downloading high-resolution images from Pi
 
 ## 📁 Project Structure
 
+```
 purepin/
 ├── src/
 │ ├── app/
@@ -79,6 +85,8 @@ purepin/
 ├── postcss.config.mjs
 └── tsconfig.json
 
+```
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -112,7 +120,7 @@ purepin/
 ## 📖 Usage
 
 1. Find a Pinterest pin you want to download
-2. Copy the pin's URL
+2. Copy the pin's Image address
 3. Paste it into PurePin's input field
 4. Click download and get the high-resolution image instantly
 
@@ -122,7 +130,7 @@ purepin/
 PurePin is intended for personal use — downloading publicly available images for reference, inspiration, or offline viewing. Please respect content creators' rights and Pinterest's terms of service.
 
 **Why isn't my image downloading?**
-Make sure you're pasting a valid Pinterest pin URL. Some pins may be private or restricted.
+Make sure you're pasting a valid Pinterest Image address URL. Some pins may be private or restricted.
 
 ## 📄 License
 
