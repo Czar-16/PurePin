@@ -4,14 +4,9 @@ PurePin is a simple, fast web app for downloading high-resolution images from Pi
 
 ## 📸 Screenshots
 
-**Landing Page**
-![Landing Page](./public/screenshots/home.png)
-
-**Paste Image URL**
-![Paste Image URL](./public/screenshots/download.png)
-
-**Download Result**
-![Download Result](./public/screenshots/result.png)
+|                   Landing Page                    |                    Paste Image URL                     |                   Download Result                   |
+| :-----------------------------------------------: | :----------------------------------------------------: | :-------------------------------------------------: |
+| ![Landing Page](./public/screenshots/landing.png) | ![Paste Image URL](./public/screenshots/paste-url.png) | ![Download Result](./public/screenshots/result.png) |
 
 ## ✨ Features
 
