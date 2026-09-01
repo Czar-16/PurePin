@@ -65,7 +65,7 @@ export default function UrlInput({
 
       {/* Info note */}
       <div className="mt-3 flex items-start justify-center gap-2 px-2 text-center sm:mt-4">
-        <Info className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-red-400 sm:h-4 sm:w-4" />
+        <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-400 sm:h-4 sm:w-4" />
         <p className="text-xs text-zinc-500 sm:text-sm">
           Make sure to copy the{" "}
           <span className="font-medium text-zinc-300">image address</span>{" "}

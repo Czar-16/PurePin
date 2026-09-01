@@ -73,7 +73,7 @@ export default function DeviceGuide() {
             <ol className="space-y-3 sm:space-y-4">
               {device.steps.map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-600/15 text-xs font-semibold text-red-400">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-600/15 text-xs font-semibold text-red-400">
                     {i + 1}
                   </span>
                   <span className="text-sm leading-6 text-zinc-400">

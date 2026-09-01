@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { ViewCounter } from "@/components/Home/ViewCounter";
 function GithubIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -34,7 +34,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <Link
+        {/* <Link
           href="https://github.com/Czar-16/purepin"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,7 +42,20 @@ export default function Navbar() {
         >
           <GithubIcon className="h-4 w-4" />
           <span className="hidden sm:inline">Behind the Scenes</span>
-        </Link>
+        </Link> */}
+        <div className="flex items-center gap-3">
+          <ViewCounter />
+
+          <Link
+            href="https://github.com/Czar-16/purepin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-zinc-400 transition-colors hover:border-red-600/50 hover:text-white"
+          >
+            <GithubIcon className="h-4 w-4" />
+            <span className="hidden sm:inline">Behind the Scenes</span>
+          </Link>
+        </div>
       </div>
     </header>
   );
