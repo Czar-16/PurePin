@@ -44,7 +44,7 @@ export default function Navbar() {
             className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-zinc-400 transition-colors hover:border-red-600/50 hover:text-white"
           >
             <GithubIcon className="h-4 w-4" />
-            <span>Behind the Scenes</span>
+            {/* <span>Behind the Scenes</span> */}
           </Link>
         </div>
       </div>
